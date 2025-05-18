@@ -1,0 +1,72 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "workbench.editorAssociations": {
+        "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+        "*.so": "hexEditor.hexedit",
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Dark+ Python",
+    "editor.fontFamily": "FantasqueSansM Nerd Font",
+    "terminal.integrated.fontFamily": "FantasqueSansM Nerd Font Mono",
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.gpuAcceleration": "on",
+    "editor.fontSize": 15,
+    "window.menuBarVisibility": "compact",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.compactFolders": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.wordWrap": "off",
+    "editor.selectionClipboard": false,
+    "editor.renderWhitespace": "all",
+    "editor.inlineSuggest.showToolbar": "always",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+
+    "json.maxItemsComputed": 50000,
+
+    "flake8.args": [
+        "--ignore=E501,E226,E241,E401",
+    ],
+    "pylint.args": [
+        "--disable=no-name-in-module, line-too-long, exec-used, invalid-name, missing-module-docstring, missing-function-docstring, missing-class-docstring, attribute-defined-outside-init, unused-argument, too-many-locals, too-many-branches, too-many-statements, fixme, too-few-public-methods, too-many-nested-blocks, too-many-arguments, too-many-positional-arguments, too-many-instance-attributes",
+    ],
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+    "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
+    "python.analysis.typeEvaluation.strictDictionaryInference": true,
+    "python.analysis.typeEvaluation.strictListInference": true,
+    "python.analysis.typeEvaluation.strictSetInference": true,
+    "python.analysis.logLevel": "Error",
+    "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+    "telemetry.telemetryLevel": "off",
+    "python.experiments.enabled": false,
+
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
+    "git.enableSmartCommit": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    "redhat.telemetry.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+
+    "chat.commandCenter.enabled": false,
+    "extensions.autoUpdate": false,
+    "codetogether.userName": "Acemany",
+    "vsicons.dontShowNewVersionMessage": true,
+    "files.associations": {
+        "*.rst": "restructuredtext"
+    },
+
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+}
