@@ -6,8 +6,9 @@
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-    timg $(pokeshell -f random) -pq --auto-crop | fastfetch -c ~/.config/fastfetch/mini.jsonc --show-errors --logo -
     echo "Type \"whatshappenin\" to see system status, check if needed scripts/daemons are running and to see useful commands"
+    echo
+    timg $(pokeshell -f random) -pq --auto-crop | fastfetch -c ~/.config/fastfetch/presets/examples/25.jsonc --show-errors --logo -
 else
     echo
     if [ -f /bin/hyprctl ]; then

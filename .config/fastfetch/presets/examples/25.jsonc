@@ -7,14 +7,15 @@
         },
         "separator": "",
         "constants": [
-            "──────────────────────────────────────────────",
-            "\u001b[47D",
-            "\u001b[47C",
-            "\u001b[46C"
+            "────────────────────────────────────────",
+            "\u001b[41D",
+            "\u001b[41C",
+            "\u001b[40C"
         ],
         "brightColor": false
     },
     "modules": [
+        "break",
         {
             "type": "version",
             "key": "┌───────────────┬─{$1}┐\u001b[41D",
@@ -64,12 +65,12 @@
         {
             "type": "disk",
             "key": "│{#cyan}│ {icon}  Disk      │{$4}│{#keys}│{$2}",
-            "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}",
+            "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}"
         },
-        {
-            "type": "battery",
-            "key": "│{#cyan}│ {icon}  Battery   │{$4}│{#keys}│{$2}"
-        },
+        //{
+        //    "type": "battery",
+        //    "key": "│{#cyan}│ {icon}  Battery   │{$4}│{#keys}│{$2}"
+        //},
         {
             "type": "custom",
             "key": "│{#cyan}└──────────────┴{$1}┘{#keys}│",
@@ -82,10 +83,10 @@
             "key": "│{#green}┌──────────────┬{$1}┐{#keys}│\u001b[37D",
             "format": "{#bright_green} Desktop "
         },
-        {
-            "type": "de",
-            "key": "│{#green}│ {icon}  Desktop   │{$4}│{#keys}│{$2}"
-        },
+        //{
+        //    "type": "de",
+        //    "key": "│{#green}│ {icon}  Desktop   │{$4}│{#keys}│{$2}"
+        //},
         {
             "type": "wm",
             "key": "│{#green}│ {icon}  Session   │{$4}│{#keys}│{$2}"
@@ -130,7 +131,8 @@
         },
         {
             "type": "packages",
-            "key": "│{#yellow}│ {icon}  Packages  │{$4}│{#keys}│{$2}"
+            "key": "│{#yellow}│ {icon}  Packages  │{$4}│{#keys}│{$2}",
+            "format": "{pacman} (pacman), {flatpak-all} (flatpak)"
         },
         {
             "type": "custom",
@@ -192,7 +194,13 @@
         },
         {
             "type": "font",
-            "key": "│{#red}│ {icon}  Interface │{$4}│{#keys}│{$2}"
+            "key": "│{#red}│ {icon}  Primary   │{$4}│{#keys}│{$2}",
+            "format": "{font1}"
+        },
+        {
+            "type": "font",
+            "key": "│{#red}│ {icon}  Secondary │{$4}│{#keys}│{$2}",
+            "format": "{font2}"
         },
         {
             "type": "custom",
@@ -220,7 +228,7 @@
             "type": "disk",
             "keyIcon": "",
             "key": "│{#magenta}│ {icon}  OS Age    │{$4}│{#keys}│{$2}",
-            "folders": "/", // On macOS, "/System/Volumes/VM" works for me
+            "hiddenFolders": "/", // On macOS, "/System/Volumes/VM" works for me
             "format": "{create-time:10} [{days} days]"
         },
         {

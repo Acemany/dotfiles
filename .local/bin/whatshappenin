@@ -6,4 +6,7 @@ if ! [ -d /mnt/acemany/usr ]; then
   echo "PLEASE RUN try-fix-disk!!! "
 fi
 
-echo To enable yggdrasil run `systemctl status yggdrasil.service`
+echo Nice music metadata searchengine utility and library written in C is glyr
+echo
+
+systemctl status yggdrasil.service
