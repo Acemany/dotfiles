@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+# $ v4last pc/desktop/windows/linux/mac[OS]/server/android/all [-d]
+#
+
+links="$(wget https://api.github.com/repos/Acemany/MindustryV4Builds/releases/latest -qO - | awk -F \" -v RS="," '/browser_download_url/ {print $(NF-1)}')"
+
+case "${1:-all}" in
+  android)
+    printf "[android](\e]8;;$(grep -i android <<< "$links")\e\\$(grep -i android <<< "$links")\e]8;;\e\\)\n"
+    if [ "$2" ]; then
+      wget -O mindustryV4.apk "$(grep -i android <<< "$links")"
+      echo Last v4 mindustry Android build was downloaded!
+    fi
+    echo
+    ;;
+
+  server)
+    printf "[server](\e]8;;$(grep -i server <<< "$links")\e\\$(grep -i server <<< "$links")\e]8;;\e\\)\n"
+    if [ "$2" ]; then
+      wget -O serverV4.jar "$(grep -i server <<< "$links")"
+      echo Last v4 mindustry Server build was downloaded!
+    fi
+    echo
+    ;;
+
+  pc | desktop | windows | linux | mac*)
+    printf "[windows/linux/macos](\e]8;;$(grep -i desktop <<< "$links")\e\\$(grep -i desktop <<< "$links")\e]8;;\e\\)\n"
+    if [ "$2" ]; then
+      wget -O mindustryV4.jar "$(grep -i desktop <<< "$links")"
+      echo Last v4 mindustry Desktop build was downloaded!
+    fi
+    echo
+    ;;
+
+  *)
+    printf "[android](\e]8;;$(grep -i android <<< "$links")\e\\$(grep -i android <<< "$links")\e]8;;\e\\)\n"
+    printf "[server](\e]8;;$(grep -i server <<< "$links")\e\\$(grep -i server <<< "$links")\e]8;;\e\\)\n"
+    printf "[windows/linux/macos](\e]8;;$(grep -i desktop <<< "$links")\e\\$(grep -i desktop <<< "$links")\e]8;;\e\\)\n"
+
+    if [ "$2" ]; then
+      wget -O mindustryV4.jar "$(grep -i desktop <<< "$links")"
+      wget -O serverV4.jar "$(grep -i server <<< "$links")"
+      wget -O mindustryV4.apk "$(grep -i android <<< "$links")"
+      echo Last v4 mindustry build was downloaded!
+    fi
+    echo
+    ;;
+esac

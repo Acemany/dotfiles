@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo mount /dev/disk/by-label/acemanydisk /mnt/acemany -t ext4

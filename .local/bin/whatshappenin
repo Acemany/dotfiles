@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if ! [ -d /mnt/acemany/usr ]; then
+  echo "     !!! WARNING !!!       "
+  echo "SECOND DISK FAILED TO MOUNT"
+  echo "PLEASE RUN try-fix-disk!!! "
+fi
+
+echo To enable yggdrasil run `systemctl status yggdrasil.service`

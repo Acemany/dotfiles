@@ -55,7 +55,7 @@ DefaultPageSize=1
 # Override Xkb Option
 OverrideXkbOption=True
 # Custom Xkb Option
-CustomXkbOption=ctrl:none
+CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
 # Force Disabled Addons

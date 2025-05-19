@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mutter --wayland &
+sleep 5
+waydroid show-full-ui

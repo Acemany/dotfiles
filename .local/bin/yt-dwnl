@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+declare -x all_proxy='socks5://0.0.0.0:1080'
+yt-dlp -f bv*+ba ${1:?}

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mutter --wayland &
+sleep 5
+osu-lazer

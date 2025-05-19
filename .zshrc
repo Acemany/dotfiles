@@ -1,6 +1,17 @@
 export PATH=/home/xarnz/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/xarnz/Applications/shell:/home/xarnz/bots:/home/xarnz/.cargo/bin
 
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+
 [[ $- != *i* ]] && return
+
+if ! [ -d /mnt/acemany/usr ]; then
+  echo "     !!! WARNING !!!       "
+  echo "SECOND DISK FAILED TO MOUNT"
+  echo "PLEASE RUN try-fix-disk!!! "
+fi
 
 
 for f in ~/.config/zshrc/*; do
@@ -9,14 +20,3 @@ for f in ~/.config/zshrc/*; do
         [[ -f $c ]] && source $c || source $f
     fi
 done
-
-
-if ! [ -d /mnt/acemany/usr ]; then
-    echo "     !!! WARNING !!!       "
-    echo "SECOND DISK FAILED TO MOUNT"
-    echo "PLEASE RUN try-fix-disk!!! "
-fi
-
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
