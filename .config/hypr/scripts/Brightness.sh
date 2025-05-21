@@ -4,11 +4,15 @@
 
 iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
-step=10  # INCREASE/DECREASE BY THIS VALUE
+step=32  # INCREASE/DECREASE BY THIS VALUE
+
+monitor_data=$(hyprctl monitors -j)
+focused_id=$(( $(echo $monitor_data | jq -r '.[] | select(.focused == true) | .id') + 1 ))
+vcp_value=$(ddcutil --display=$focused_id getvcp 10 | cut -d: -f2)
 
 # Get brightness
 get_backlight() {
-	brightnessctl -m | cut -d, -f4 | sed 's/%//'
+	echo "scale=2; $(echo $vcp_value | cut -d, -f1 | cut -d= -f2)/$(echo $vcp_value | cut -d= -f3)*100" | bc | cut -d. -f1
 }
 
 # Get icons
@@ -34,26 +38,22 @@ notify_user() {
 
 # Change brightness
 change_backlight() {
-	local current_brightness
-	current_brightness=$(get_backlight)
+	#focused_name=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .name')
 
-	# Calculate new brightness
-	if [[ "$1" == "+${step}%" ]]; then
-		new_brightness=$((current_brightness + step))
-	elif [[ "$1" == "${step}%-" ]]; then
-		new_brightness=$((current_brightness - step))
-	fi
+	#if [ "$focused_name" == "eDP-1" ]; then
+		# Internal display
+		#if [ "$direction" == "-" ]; then
+		#    brillo -u 150000 -U $step
+		#else
+		#    brillo -u 150000 -A $step
+		#fi
+	#else
+	# External display
+		ddcutil --display=$focused_id setvcp 10 ${1:?} $step
+	#fi
 
-	# Ensure new brightness is within valid range
-	if (( new_brightness < 5 )); then
-		new_brightness=5
-	elif (( new_brightness > 100 )); then
-		new_brightness=100
-	fi
-
-	brightnessctl set "${new_brightness}%"
 	get_icon
-	current=$new_brightness
+	current=$(get_backlight)
 	notify_user
 }
 
@@ -63,10 +63,15 @@ case "$1" in
 		get_backlight
 		;;
 	"--inc")
-		change_backlight "+${step}%"
+		change_backlight "+"
+		echo "{\"text\":\"$(get_backlight)\"}"
 		;;
 	"--dec")
-		change_backlight "${step}%-"
+		change_backlight "-"
+		echo "{\"text\":\"$(get_backlight)\"}"
+		;;
+	"--json")
+		echo "{\"text\":\"$(get_backlight)\"}"
 		;;
 	*)
 		get_backlight

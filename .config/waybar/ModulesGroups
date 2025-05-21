@@ -11,7 +11,7 @@
 		"transition-duration": 500,
 		"children-class": "custom/menu",
 		"transition-left-to-right": true
-        },
+		},
 	"modules": [
 		"custom/menu",
 		"custom/light_dark",
@@ -19,6 +19,7 @@
 		"custom/tty",
 		"custom/browser",
 		"custom/settings",
+		"custom/updater",
 	]
 },
 "group/motherboard": {
@@ -38,11 +39,12 @@
 		"transition-duration": 500,
 		"children-class": "cpu",
 		"transition-left-to-right": true
-        },
+		},
 	"modules": [
-		"temperature",		
+		"temperature",
 		"cpu",
-		"power-profiles-daemon",	
+		"custom/backlight",
+		"power-profiles-daemon",
 		"memory",
 		"disk",
 	]
@@ -60,7 +62,7 @@
 		"transition-duration": 500,
 		"children-class": "pulseaudio",
 		"transition-left-to-right": true
-        },
+		},
 	"modules": [
 		"pulseaudio",
 		"pulseaudio#microphone",
@@ -73,7 +75,7 @@
 		"transition-duration": 500,
 		"children-class": "bluetooth",
 		"transition-left-to-right": true
-        },
+		},
 	"modules": [
 		"network",
 		"bluetooth",
@@ -86,7 +88,7 @@
 		"transition-duration": 500,
 		"children-class": "custom/power",
 		"transition-left-to-right": false
-        },
+		},
 	"modules": [
 		"custom/power",
 		"custom/lock",
@@ -100,40 +102,39 @@
 		"transition-duration": 500,
 		"children-class": "custom/swaync",
 		"transition-left-to-right": false
-        },
+		},
 	"modules": [
 		"custom/swaync",
-		"custom/dot_update",
 	]
 },
 
 "group/power": {
-    "orientation": "inherit",
-    "drawer": {
-        "transition-duration": 500,
-        "children-class": "drawer-child",
-        "transition-left-to-right": false
-      },
-    "modules": [
-        "custom/power",
-        "custom/quit",
-        "custom/lock",
-        "custom/reboot"
-      ]
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "drawer-child",
+		"transition-left-to-right": false
+	},
+	"modules": [
+		"custom/power",
+		"custom/quit",
+		"custom/lock",
+		"custom/reboot"
+	]
 },
 // groups for vertical
 "group/power#vert": {
-     "orientation": "inherit",
-     "drawer": {
-        "transition-duration": 300,
-        "children-class": "not-memory",
-        "transition-left-to-right": false
-       },
-     "modules": [
-        "custom/power",
-        "custom/lock",
-        "custom/logout",
-        "custom/reboot"
-      ]
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 300,
+		"children-class": "not-memory",
+		"transition-left-to-right": false
+	},
+	"modules": [
+		"custom/power",
+		"custom/lock",
+		"custom/logout",
+		"custom/reboot"
+	]
 },
 }
