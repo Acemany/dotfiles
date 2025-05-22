@@ -7,11 +7,14 @@
     },
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Dark+ Python",
-    "editor.fontFamily": "FantasqueSansM Nerd Font",
-    "terminal.integrated.fontFamily": "FantasqueSansM Nerd Font Mono",
-    "terminal.integrated.enableImages": true,
-    "terminal.integrated.gpuAcceleration": "on",
+    "editor.fontFamily": "FantasqueSansM Nerd Font Propo",
+    "editor.fontLigatures": true,
     "editor.fontSize": 15,
+    "terminal.integrated.fontFamily": "FantasqueSansM Nerd Font Mono",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.gpuAcceleration": "off",
+
     "window.menuBarVisibility": "compact",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -39,7 +42,6 @@
     "python.analysis.typeEvaluation.strictSetInference": true,
     "python.analysis.logLevel": "Error",
     "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
-    "telemetry.telemetryLevel": "off",
     "python.experiments.enabled": false,
 
     "git.confirmSync": false,
@@ -53,7 +55,6 @@
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": true
     },
-    "redhat.telemetry.enabled": false,
     "security.workspace.trust.untrustedFiles": "open",
     "python.defaultInterpreterPath": "/usr/bin/python3",
 
@@ -69,4 +70,8 @@
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
+    "telemetry.feedback.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "dotnetAcquisitionExtension.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
 }
