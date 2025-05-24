@@ -11,7 +11,7 @@ rofi_theme_1="$HOME/.config/rofi/config-rofi-Beats-menu.rasi"
 # Online Stations. Edit as required
 declare -A online_music=(
   ["FM - Easy Rock 96.3 📻🎶"]="https://radio-stations-philippines.com/easy-rock"
-  ["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio" 
+  ["FM - Easy Rock - Baguio 91.9 📻🎶"]="https://radio-stations-philippines.com/easy-rock-baguio"
   ["FM - Love Radio 90.7 📻🎶"]="https://radio-stations-philippines.com/love"
   ["FM - WRock - CEBU 96.3 📻🎶"]="https://onlineradio.ph/126-96-3-wrock.html"
   ["FM - Fresh Philippines 📻🎶"]="https://onlineradio.ph/553-fresh-fm.html"
@@ -58,7 +58,7 @@ play_local_music() {
   # Find the corresponding file path based on user's choice and set that to play the song then continue on the list
   for (( i=0; i<"${#filenames[@]}"; ++i )); do
     if [ "${filenames[$i]}" = "$choice" ]; then
-		
+
 	    notification "$choice"
       mpv --playlist-start="$i" --loop-playlist --vid=no  "${local_music[@]}"
 
@@ -88,7 +88,7 @@ play_online_music() {
   link="${online_music[$choice]}"
 
   notification "$choice"
-  
+
   # Play the selected online music using mpv
   mpv --shuffle --vid=no "$link"
 }
@@ -103,7 +103,7 @@ stop_music() {
 
     for pid in $mpv_pids; do
       if ! echo "$mpvpaper_pid" | grep -q "$pid"; then
-        kill -9 $pid || true 
+        kill -9 $pid || true
       fi
     done
     notify-send -u low -i "$iDIR/music.png" "Music stopped" || true

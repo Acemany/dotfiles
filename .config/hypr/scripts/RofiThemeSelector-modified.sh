@@ -53,7 +53,7 @@ declare -a theme_names
 # Find themes in defined directories
 find_themes() {
     directories=("$HOME/.local/share/rofi/themes" "$HOME/.config/rofi/themes")
-    
+
     for TD in "${directories[@]}"; do
         if [ -d "$TD" ]; then
             echo "Checking themes in: $TD"

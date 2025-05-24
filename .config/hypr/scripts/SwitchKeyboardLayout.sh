@@ -9,9 +9,9 @@ notif_icon="$HOME/.config/swaync/images/ja.png"
 
 # Refined ignore list with patterns or specific device names
 ignore_patterns=(
-  "--(avrcp)" 
-  "Bluetooth Speaker" 
-  "Other Device 
+  "--(avrcp)"
+  "Bluetooth Speaker"
+  "Other Device
   Name"
   )
 
@@ -79,7 +79,7 @@ change_layout() {
             echo "Skipping ignored device: $name"
             continue
         fi
-        
+
         echo "Switching layout for $name to $new_layout..."
 	      hyprctl switchxkblayout "$name" "$next_index"
         if [ $? -ne 0 ]; then

@@ -25,8 +25,8 @@ menu() {
 add_theme_to_config() {
     local theme_name="$1"
     local theme_path="$rofi_theme_dir/$theme_name"
-        
-    # if config in $HOME to write as $HOME 
+
+    # if config in $HOME to write as $HOME
     if [[ "$theme_path" == $HOME/* ]]; then
         theme_path_with_tilde="~${theme_path#$HOME}"
     else

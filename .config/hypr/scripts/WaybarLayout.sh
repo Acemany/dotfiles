@@ -2,7 +2,7 @@
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Script for waybar layout or configs
 
-# 0-ja-0 camellia summitSplit 
+# 0-ja-0 camellia summitSplit
 
 IFS=$'\n\t'
 

@@ -76,7 +76,7 @@ main() {
             # Apply selected effect
             notify-send -u normal -i "$iDIR/ja.png"  "Applying:" "$choice effects"
             eval "${effects[$choice]}"
-            
+
             # intial kill process
             for pid in swaybg mpvpaper; do
             killall -SIGUSR1 "$pid"
@@ -86,7 +86,7 @@ main() {
             swww img -o "$focused_monitor" "$wallpaper_output" $SWWW_PARAMS &
 
             sleep 2
-  
+
             wallust run "$wallpaper_output" -s &
             sleep 1
             # Refresh rofi, waybar, wallust palettes
@@ -110,12 +110,12 @@ sleep 1
 if [[ -n "$choice" ]]; then
   sddm_sequoia="/usr/share/sddm/themes/sequoia_2"
   if [ -d "$sddm_sequoia" ]; then
-  
+
 	# Check if yad is running to avoid multiple yad notification
 	if pidof yad > /dev/null; then
 	  killall yad
 	fi
-	
+
 	if yad --info --text="Set current wallpaper as SDDM background?\n\nNOTE: This only applies to SEQUOIA SDDM Theme" \
     --text-align=left \
     --title="SDDM Background" \

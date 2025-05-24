@@ -50,7 +50,7 @@ EOF
 # Main function to handle menu selection
 main() {
     choice=$(menu | rofi -i -dmenu -config $rofi_theme -mesg "$msg")
-    
+
     # Map choices to corresponding files
     case "$choice" in
     	"view/edit User Defaults") file="$UserConfigs/01-UserDefaults.conf" ;;
@@ -64,31 +64,31 @@ main() {
         "view/edit Laptop Keybinds") file="$UserConfigs/Laptops.conf" ;;
         "view/edit Default Keybinds") file="$configs/Keybinds.conf" ;;
         "Choose Kitty Terminal Theme") $scriptsDir/Kitty_themes.sh ;;
-        "Configure Monitors (nwg-displays)") 
+        "Configure Monitors (nwg-displays)")
             if ! command -v nwg-displays &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install nwg-displays first"
                 exit 1
             fi
             nwg-displays ;;
-        "Configure Workspace Rules (nwg-displays)") 
+        "Configure Workspace Rules (nwg-displays)")
             if ! command -v nwg-displays &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install nwg-displays first"
                 exit 1
             fi
             nwg-displays ;;
-		"GTK Settings (nwg-look)") 
+		"GTK Settings (nwg-look)")
             if ! command -v nwg-look &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install nwg-look first"
                 exit 1
             fi
             nwg-look ;;
-		"QT Apps Settings (qt6ct)") 
+		"QT Apps Settings (qt6ct)")
             if ! command -v qt6ct &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install qt6ct first"
                 exit 1
             fi
             qt6ct ;;
-		"QT Apps Settings (qt5ct)") 
+		"QT Apps Settings (qt5ct)")
             if ! command -v qt5ct &>/dev/null; then
                 notify-send -i "$iDIR/error.png" "E-R-R-O-R" "Install qt5ct first"
                 exit 1

@@ -19,7 +19,7 @@ menu() {
             options+=("$(basename "$file" .css)")
         fi
     done < <(find -L "$waybar_styles" -maxdepth 1 -type f -name '*.css' -exec basename {} \; | sort )
-    
+
     printf '%s\n' "${options[@]}"
 }
 
