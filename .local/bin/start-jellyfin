@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+JELLYFINDIR="/usr/lib/jellyfin"
+FFMPEGDIR="/usr/lib/jellyfin-ffmpeg"
+
+if ! pidof yggdrasil  > /dev/null; then
+    echo "[$(date +"%T")] [WRN] [1] Yggdrasyl: Service is not running, you won't be able to connect via Yggdrasil"
+fi
+
+$JELLYFINDIR/jellyfin \
+ -d $JELLYFINDIR/data \
+ -C $JELLYFINDIR/cache \
+ -c $JELLYFINDIR/config \
+ -l $JELLYFINDIR/log \
+ --ffmpeg $FFMPEGDIR/ffmpeg

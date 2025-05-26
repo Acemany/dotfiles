@@ -6,10 +6,11 @@
 # General
 # -----------------------------------------------------
 alias c='clear'
-alias nf='fastfetch'
-alias neofetch='fastfetch'
-alias pf='fastfetch'
 alias ff='fastfetch'
+alias neofetch='fastfetch -c $HOME/.config/fastfetch/presets/neofetch.jsonc'
+alias nf='neofetch'
+alias paleofetch='fastfetch -c HOME/.config/fastfetch/presets/paleofetch.jsonc'
+alias pf='paleofetch'
 alias ls='eza -Al --icons=always'
 alias ll='eza -Al --icons=always'
 alias lt='eza -A --tree --level=1 --icons=always'

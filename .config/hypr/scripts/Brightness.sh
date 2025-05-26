@@ -4,7 +4,7 @@
 
 iDIR="$HOME/.config/swaync/icons"
 notification_timeout=1000
-step=32  # INCREASE/DECREASE BY THIS VALUE
+step=128  # INCREASE/DECREASE BY THIS VALUE
 
 monitor_data=$(hyprctl monitors -j)
 focused_id=$(( $(echo $monitor_data | jq -r '.[] | select(.focused == true) | .id') + 1 ))

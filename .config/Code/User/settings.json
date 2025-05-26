@@ -63,15 +63,36 @@
     "codetogether.userName": "Acemany",
     "vsicons.dontShowNewVersionMessage": true,
     "files.associations": {
-        "*.rst": "restructuredtext"
+        "*.rst": "restructuredtext",
+        "*.json": "jsonc"
     },
 
     "hexeditor.columnWidth": 16,
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
+
     "telemetry.feedback.enabled": false,
     "redhat.telemetry.enabled": false,
     "dotnetAcquisitionExtension.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
+    "makefile.configureOnOpen": true,
+
+    "c-cpp-flylint.clang.enable": true,
+    "c-cpp-flylint.lizard.enable": false,
+    "c-cpp-flylint.cppcheck.enable": true,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.pclintplus.enable": false,
+    "c-cpp-flylint.flawfinder.enable": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "c-cpp-flylint.debug": true,
+
+    "c-cpp-flylint.clang.standard": [
+        "c99",
+    ],
+    "c-cpp-flylint.cppcheck.language": "c",
+    "c-cpp-flylint.clang.extraArgs": [
+        "--std=gnu99",
+        "-xc"
+    ],
 }
