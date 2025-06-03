@@ -5,6 +5,10 @@
         "{hexdiff}:/**/*.*": "hexEditor.hexedit",
         "*.so": "hexEditor.hexedit",
     },
+    "files.associations": {
+        "*.rst": "restructuredtext",
+        "*.json": "jsonc"
+    },
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Dark+ Python",
     "editor.fontFamily": "FantasqueSansM Nerd Font Propo",
@@ -14,6 +18,8 @@
     "terminal.integrated.fontLigatures.enabled": true,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.gpuAcceleration": "off",
+    "terminal.integrated.smoothScrolling": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
 
     "window.menuBarVisibility": "compact",
     "explorer.confirmDelete": false,
@@ -62,10 +68,6 @@
     "extensions.autoUpdate": false,
     "codetogether.userName": "Acemany",
     "vsicons.dontShowNewVersionMessage": true,
-    "files.associations": {
-        "*.rst": "restructuredtext",
-        "*.json": "jsonc"
-    },
 
     "hexeditor.columnWidth": 16,
     "hexeditor.showDecodedText": true,
